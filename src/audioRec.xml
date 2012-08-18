@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
+                       xmlns:s="library://ns.adobe.com/flex/spark"
+                       xmlns:mx="library://ns.adobe.com/flex/mx"
+                       xmlns:ui="ui.*"
+                       width="470" height="240">
+    <fx:Script>
+        <![CDATA[
+            import com.adobe.audio.format.WAVWriter;
+           
+            import flash.events.Event;
+            import flash.events.SampleDataEvent;
+            import flash.events.StatusEvent;
+            import flash.media.Microphone;
+            import flash.media.Sound;
+            import flash.media.SoundChannel;
+            import flash.utils.ByteArray;
+            import flash.utils.Endian;
+           
+            import ui.AudioVisualization;
+           
+            [Bindable]
+            private var micNames:Array = Microphone.names;
+           
+            private var recordedData:ByteArray;
+           
+            private var mic:Microphone;
+            private var sound:Sound;
+            private var file:File;
+           
+            private function onOff():void
+            {
+                if (recordButton.selected)
+                {
+                    recordData();
+                    recordButton.label = "Stop";
+                }
+                else
+                {
+                    stopRecording();
+                    recordButton.label = "Record";
+                }
+            }
+
+            private function recordData():void
+            {
+                recordedData = new ByteArray();
+               
+                mic = Microphone.getMicrophone(
+micNamesCombo.selectedIndex );
+                mic.rate = 44;
+               
+                mic.addEventListener(SampleDataEvent.SAMPLE_DATA,
+dataHandler);           
+            }
+           
+            private function stopRecording():void
+            {
+                if (!mic)
+                    return;
+               
+               
+mic.removeEventListener(SampleDataEvent.SAMPLE_DATA, dataHandler);
+            }
+           
+            private function
+dataHandler(event:SampleDataEvent):void
+            {
+                this.visualization.drawMicBar(mic.activityLevel,
+0xFF0000);
+                recordedData.writeBytes(event.data);               
+
+            }
+           
+            private function playRecordedData():void
+            {
+                recordedData.position = 0;
+                sound = new Sound();
+                sound.addEventListener(SampleDataEvent.SAMPLE_DATA,
+playSoundHandler);
+               
+                var channel:SoundChannel;
+                channel = sound.play();
+                channel.addEventListener(Event.SOUND_COMPLETE,
+onPlaybackComplete);
+               
+                visualization.start();
+            }
+           
+            private function onPlaybackComplete(event:Event):void
+            {
+                visualization.stop();
+            }
+           
+            private function
+playSoundHandler(event:SampleDataEvent):void
+            {
+                if (!recordedData.bytesAvailable > 0)
+                    return;
+               
+                var length:int = 8192; // Change between 2048 and
+8192
+                for (var i:int = 0; i < length; i++)
+                {
+                    var sample:Number = 0;
+                   
+                    if (recordedData.bytesAvailable > 0)
+                        sample = recordedData.readFloat();
+                   
+                    event.data.writeFloat(sample);
+                }
+            }
+           
+            private function save():void
+            {
+                file = new File( );
+                file.browseForSave( "Save your wav" );
+                file.addEventListener( Event.SELECT, writeWav );
+            }
+           
+            private function writeWav(evt:Event):void
+            {
+                var wavWriter:WAVWriter = new WAVWriter();
+                var stream:FileStream = new FileStream();
+               
+                // Set settings
+                recordedData.position = 0;
+                wavWriter.numOfChannels = 1;
+                wavWriter.sampleBitRate = 16;
+                wavWriter.samplingRate = 44100;               
+               
+                stream.open( file, FileMode.WRITE );
+               
+                // convert ByteArray to WAV
+                wavWriter.processSamples( stream, recordedData,
+44100, 1 );
+                stream.close();
+            }        
+           
+        ]]>
+    </fx:Script>
+   
+    <mx:ComboBox id="micNamesCombo" dataProvider="{micNames}"
+x="283" y="8"/>
+    <mx:Button id="recordButton" label="Record" toggle="true"
+click="onOff()" x="28" y="7"/>
+    <s:Button id="playButton" label="Play Recording"
+click="playRecordedData()" x="102"  y="7"/>
+    <s:Button id="saveButton" label="Save" click="save()"
+x="208" y="7"/>
+   
+    <ui:AudioVisualization id="visualization" y="100" />
+   
+</s:WindowedApplication>
