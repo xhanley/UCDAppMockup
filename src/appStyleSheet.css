@@ -43,3 +43,11 @@ z-index: 2;
 width:227px;
 height:343px;
 }
+
+/*Original screen image size = 227, 343.  So transformation of coords = 227/312, 343/476 = 0.7276, 0.7206 */
+#loginButton{
+position:absolute;
+left:127px;
+top:248px;
+z-index: 3;
+}
