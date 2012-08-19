@@ -99,6 +99,7 @@ var input = document.createElement('INPUT');
 input.setAttribute('id', id);
 input.setAttribute('type', 'text');
 input.setAttribute('value', value);
+input.setAttribute('onclick', "clearField(id);");
 var screenDiv = document.getElementById("screen");
 screenDiv.appendChild(input);
 }
