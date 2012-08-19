@@ -44,7 +44,7 @@ width:227px;
 height:343px;
 }
 
-/* Login Screen buttons and fields */
+/* Login Screen - Layout -------------- */
 #userNameField{
 position:absolute;
 width:80px;
@@ -70,5 +70,41 @@ color:gray;
 #registerButton{ position:absolute; z-index: 3; left:135px; top:305px; }
 #exitButton{ position:absolute; z-index: 3; left:25px; top:300px; }
 
+/* End Login Screen - Layout -------------- */
 
+/* Registration Screen - Layout -------------- */
+#userNameFieldR{
+position:absolute;
+width:80px;
+height:18px;
+left:118px;
+top:125px;
+z-index: 3;
+color:gray;
+}
+
+#passwordFieldR{
+position:absolute;
+width:80px;
+height:18px;
+left:113px;
+top:178px;
+z-index: 3;
+color:gray;
+}
+
+#passwordFieldAgainR{
+position:absolute;
+width:80px;
+height:18px;
+left:113px;
+top:230px;
+z-index: 3;
+color:gray;
+}
+
+#registerButtonR{ position:absolute; z-index: 3; left:142px; top:268px; }
+#backButtonR{ position:absolute; z-index: 3; left:25px; top:302px; }
+
+/* End Login Screen - Layout -------------- */
 
