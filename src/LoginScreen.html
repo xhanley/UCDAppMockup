@@ -31,7 +31,14 @@
             <div id="screen">
                 <img id="screenImage" src="../resources/loginPageScreen.png"/>
                 
-                <input id="loginButton" onclick="location.href='ExperimentFeedScreen.html'" type="image" src="../resources/loginButton.png" alt="Submit" width="78" height="38" />
+                <!-- Setup text fields and buttons for login Screen --> 
+                <input id="userNameField" type="text" value="Username.." onclick="clearField('userNameField')"/>
+                <input id="passwordField" type="text" value="Pass.." onclick="clearField('passwordField')"/>
+                <input id="loginButton" onclick="location.href='ExperimentFeedScreen.html'" type="image" src="../resources/alphaButton.png" width="57" height="29" />
+                <input id="registerButton" onclick="location.href='registerScreen.html'" type="image" src="../resources/alphaButton.png" width="57" height="29" />
+                <input id="exitButton" onclick="location.href='index.html'" type="image" src="../resources/alphaButton.png" width="57" height="29" />
+                
+                
                 
             </div>
         </div>

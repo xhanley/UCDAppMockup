@@ -44,10 +44,31 @@ width:227px;
 height:343px;
 }
 
-/*Original screen image size = 227, 343.  So transformation of coords = 227/312, 343/476 = 0.7276, 0.7206 */
-#loginButton{
+/* Login Screen buttons and fields */
+#userNameField{
 position:absolute;
-left:127px;
-top:248px;
+width:80px;
+height:18px;
+left:108px;
+top:123px;
 z-index: 3;
+color:gray;
 }
+
+#passwordField{
+position:absolute;
+width:80px;
+height:18px;
+left:104px;
+top:187px;
+z-index: 3;
+color:gray;
+}
+
+/*Original screen image size = 227, 343.  So transformation of coords = 227/312, 343/476 = 0.7276, 0.7206.  This was used to create the coordinate of the top-left of the invisible button. */
+#loginButton{ position:absolute; z-index: 3; left:139px; top:248px; }
+#registerButton{ position:absolute; z-index: 3; left:135px; top:305px; }
+#exitButton{ position:absolute; z-index: 3; left:25px; top:300px; }
+
+
+

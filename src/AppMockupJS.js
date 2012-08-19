@@ -20,3 +20,14 @@ function displayDate()
 //document.getElementById('b').innerHTML = document.getElementById('a').innerHTML;
 document.getElementById("a").innerHTML=Date();
 }
+
+function displayDate()
+{
+/* Must use innerHTML for non-input nodes*/
+document.getElementById('loginButton') = document.getElementById('a').innerHTML;
+}
+
+function clearField(id)
+{
+document.getElementById(id).value = "";
+}
