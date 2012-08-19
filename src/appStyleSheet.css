@@ -1,12 +1,15 @@
 
 body
 {
-text-align: center;
+text-align:center;
 }
 h1
 {
 color:Black;
 font-size:40px;
+background-color:#bbbbe6;
+margin-left:20%;
+margin-right:20%;
 }
 p
 {
@@ -15,10 +18,28 @@ font-family:"Arial";
 font-size:16px;
 }
 
-.center{
-margin-left:auto;
-margin-right:auto;
+#phone {
+width:275px;
+height:539px;
+position: absolute;
+left: 50%;
+top: 50%; 
+margin-left: -150px;
+margin-top: -150px;  
+    z-index: 1;
+}
 
-text-align: center;
-background-color:#b0e0e6;
+/*
+The screen image is positioned and scaled, at a fixed location relative to the phone image due to the actual positioning and dimensions of the iPhone screen. x,y: 27, 98 w,h: 227, 343
+*/
+#screen{
+position:absolute;
+left:26px;
+top:98px;
+z-index: 2;
+}
+
+#screenImage{
+width:227px;
+height:343px;
 }

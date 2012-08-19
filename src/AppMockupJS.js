@@ -6,5 +6,17 @@ function replace() {
 }
 
 function loadScript(){
-alert("Welcome");
+
+
+var image = document.getElementById("phoneImage");
+var imageWidth = image.width;
+var imageHeight = image.height;
+console.log("w: %d, h: %d", imageWidth, imageHeight);
+}
+
+function displayDate()
+{
+/* Must use innerHTML for non-input nodes*/
+//document.getElementById('b').innerHTML = document.getElementById('a').innerHTML;
+document.getElementById("a").innerHTML=Date();
 }

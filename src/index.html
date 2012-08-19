@@ -15,16 +15,24 @@
         
         <!-- Stylesheet include -->   
         <link rel="stylesheet" type="text/css" href="appStyleSheet.css" />
+        
+        <!-- Script includes -->    
+        <script src="AppMockupJS.js" type="text/javascript"></script>        
 
     </head>
   
     <!-- The content of the main page -->
-    <body>
-        <h1>Labcoat mobile app mockup</h1>
-        <div class="center">
-            <img src="../resources/iphone_images/notopbar_portrait/iphone4_allBlack_transparent.png"/>
+    <body onload="loadScript()">
+        <h1 id="a" onmouseover="displayDate()">Labcoat mobile app mockup</h1>
+        <h1 id="b">?</h1>
+         
+        <div id="phone">
+            <img id="phoneImage" src="../resources/iphone_images/notopbar_portrait/iphone4_allBlack_transparent.png"/>
+            <div id="screen">
+                <img id="screenImage" src="../resources/iosHomeScreen.png"/>
+            </div>
         </div>
-      
+              
     </body>
 
 </html> 
