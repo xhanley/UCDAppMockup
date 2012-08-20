@@ -1,9 +1,13 @@
-<!-- This is the index page for the App Mockup project -->
-<!-- Donnchadh O h-Ainle -->
-<!-- D11128288 -->
-<!-- donnchadh.oh-ainle@webelevate.ie -->
-<!-- App Stream -->
-<!-- WebElevate 1.2 -->
+<!-- 
+	This is the index page for the App Mockup project 
+ 	Donnchadh O h-Ainle 
+ 	D11128288 
+ 	donnchadh.oh-ainle@webelevate.ie 
+	App Stream 
+ 	WebElevate 1.2 
+	Aug 20th 2012 
+ -->
+
 
 <!doctype html>
 <html>
@@ -23,8 +27,7 @@
   
     <!-- The content of the main page -->
     <body onload="loadScript()">
-        <h1 id="a" onmouseover="displayDate()">Labcoat mobile app mockup</h1>
-        <h1 id="b">?</h1>
+        <h1>Labcoat mobile app mockup</h1>
          
         <div id="phone">
             <img id="phoneImage" src="../resources/iphone_images/notopbar_portrait/iphone4_allBlack_transparent.png"/>

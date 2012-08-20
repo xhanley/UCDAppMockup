@@ -1,8 +1,18 @@
+/* This is the cascading style sheet page for the App Mockup project. 
+* Donnchadh O h-Ainle 
+* D11128288 
+* donnchadh.oh-ainle@webelevate.ie 
+* App Stream -->
+* WebElevate 1.2 
+*/
 
+/* Main page - Layout -------------- */
 body
 {
 text-align:center;
 }
+
+/* Styling of elements in the main page */
 h1
 {
 color:Black;
@@ -11,6 +21,7 @@ background-color:#bbbbe6;
 margin-left:20%;
 margin-right:20%;
 }
+
 p
 {
 color:red;
@@ -18,6 +29,7 @@ font-family:"Arial";
 font-size:16px;
 }
 
+/* Layout of the phone div node */
 #phone {
 width:275px;
 height:539px;
@@ -29,8 +41,11 @@ margin-top: -150px;
     z-index: 1;
 }
 
-/*
-The screen image is positioned and scaled, at a fixed location relative to the phone image due to the actual positioning and dimensions of the iPhone screen. x,y: 27, 98 w,h: 227, 343
+
+/* Layout of the screen div node */
+/* 
+The screen image is positioned and scaled, at a fixed location relative to the phone image due to the 
+actual positioning and dimensions of the iPhone screen. x,y: 27, 98 w,h: 227, 343  
 */
 #screen{
 position:absolute;
@@ -39,6 +54,7 @@ top:98px;
 z-index: 2;
 }
 
+/* Scaling of the screen backgound image to fit the iPhone template */
 #screenImage{
 width:227px;
 height:343px;
@@ -115,7 +131,13 @@ color:gray;
 /* End Experiment Screen - Layout -------------- */
 
 /* Experiment Screen 1 - Layout -------------- */
-#backButtonE1{ position:absolute; z-index: 3; left:6px; top:285px; }
-#doExperiment1{ position:absolute; z-index: 3; left:27px; top:230px; }
+#backButtonE1{ position:absolute; z-index: 3; left:6px; top:285px; width:57px; height:29px; }
+#doExperiment1{ position:absolute; z-index: 3; left:27px; top:230px; width:129px; height:38px; }
 
 /* End Experiment Screen 1 - Layout -------------- */
+
+/* Camera Screen 1 - Layout -------------- */
+#takePictureButton{ position:absolute; z-index: 3; left:77px; top:308px; width:74px; height:32px; }
+
+/* End Camera Screen 1 - Layout -------------- */
+
