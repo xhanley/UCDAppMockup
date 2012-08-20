@@ -88,7 +88,7 @@ destroyInput('backButtonR');
 
 function loadExperimentFeedScreen() 
 {
-if(document.getElementById("userNameField"))
+if(document.getElementById("experimentButton1"))
 	cleanUpLoginScreen();
 else
 	cleanUpExperimentScreen_1();

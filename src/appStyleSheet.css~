@@ -115,7 +115,7 @@ color:gray;
 /* End Experiment Screen - Layout -------------- */
 
 /* Experiment Screen 1 - Layout -------------- */
-#backButtonE1{ position:absolute; z-index: 3; left:6px; top:285px; width:57px; height:29px; }
-#doExperiment1{ position:absolute; z-index: 3; left:27px; top:230px; width:129px; height:38px; }
+#backButtonE1{ position:absolute; z-index: 3; left:6px; top:285px; }
+#doExperiment1{ position:absolute; z-index: 3; left:27px; top:230px; }
 
 /* End Experiment Screen 1 - Layout -------------- */
